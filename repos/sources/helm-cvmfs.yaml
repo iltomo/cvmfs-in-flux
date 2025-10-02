@@ -5,4 +5,5 @@ metadata:
   namespace: flux-system
 spec:
   interval: 30m
-  url: https://github.com/cvmfs-contrib/cvmfs-csi/blob/master/deployments/helm/
+  url: oci://registry.cern.ch/kubernetes/charts/
+#url: https://github.com/cvmfs-contrib/cvmfs-csi/blob/master/deployments/helm/
