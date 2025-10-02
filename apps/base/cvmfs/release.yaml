@@ -9,7 +9,7 @@ spec:
   chart:
     spec:
       chart: cvmfs-csi
-      #version: 4.4.2
+      version: v2.5.3
       sourceRef:
         kind: HelmRepository
         name: cvmfs
@@ -18,5 +18,3 @@ spec:
   install:
     remediation:
       retries: 3
-  # Default values
-  # https://github.com/kubernetes/ingress-nginx/blob/master/charts/ingress-nginx/values.yaml
