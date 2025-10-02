@@ -1,8 +1,8 @@
 apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: HelmRepository
 metadata:
-  name: rucio
+  name: cvmfs
   namespace: flux-system
 spec:
   interval: 30m
-  url: https://github.com/cvmfs-contrib/cvmfs-csi/blob/master/deployments/helm/cvmfs-csi
+  url: https://github.com/cvmfs-contrib/cvmfs-csi/blob/master/deployments/helm/

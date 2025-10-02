@@ -8,11 +8,11 @@ spec:
   targetNamespace: cvmfs
   chart:
     spec:
-      chart: ingress-cvmfs
-      version: 4.4.2
+      chart: cvmfs-csi
+      #version: 4.4.2
       sourceRef:
         kind: HelmRepository
-        name: cvmfs-csi
+        name: cvmfs
         namespace: flux-system
       interval: 1m
   install:
