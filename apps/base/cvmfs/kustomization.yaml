@@ -4,3 +4,4 @@ namespace: cvmfs-02
 resources:
   - namespace.yaml
   - release.yaml
+  - cvmfs-csi-pvc.yaml
