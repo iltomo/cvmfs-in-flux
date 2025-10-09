@@ -2,10 +2,10 @@ apiVersion: helm.toolkit.fluxcd.io/v2beta2
 kind: HelmRelease
 metadata:
   name: cvmfs
-  namespace: cvmfs
+  namespace: cvmfs-02
 spec:
   interval: 5m
-  targetNamespace: cvmfs
+  targetNamespace: cvmfs-02
   chart:
     spec:
       chart: cvmfs-csi
