@@ -9,7 +9,7 @@ spec:
   chart:
     spec:
       chart: cvmfs-csi
-      version: v2.5.3
+      version: 2.5.3
       sourceRef:
         kind: HelmRepository
         name: cvmfs
