@@ -3,4 +3,4 @@ kind: Kustomization
 namespace: cvmfs
 resources:
   - namespace.yaml
-  - release.yaml
+#  - release.yaml
