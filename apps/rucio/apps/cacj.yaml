@@ -1,0 +1,49 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: cacj-edit
+  namespace: cvmfs-03
+
+---
+
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: cacj-edit
+  namespace: cvmfs-03
+subjects:
+- kind: ServiceAccount
+  name: cacj-edit
+  namespace: cvmfs-03
+roleRef:
+  kind: ClusterRole
+  name: edit
+  apiGroup: rbac.authorization.k8s.io
+
+---
+
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: cacj-01
+  namespace: cvmfs-03
+spec:
+  schedule: "0 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          serviceAccountName: cacj-edit
+          containers:
+            - name: cacj
+              image: harbor.cloud.infn.it/testbed-dm/ca-bundle-cron:v0.6.2
+              volumeMounts:
+              - mountPath: /cvmfs
+                mountPropagation: HostToContainer
+                name: public-cvmfs
+
+          restartPolicy: OnFailure
+          volumes:
+              - name: public-cvmfs
+                persistentVolumeClaim:
+                  claimName: cvmfs
