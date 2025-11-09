@@ -46,4 +46,4 @@ spec:
           volumes:
               - name: public-cvmfs
                 persistentVolumeClaim:
-                  claimName: cvmfs
+                  claimName: cvmfs-flux-pvc
