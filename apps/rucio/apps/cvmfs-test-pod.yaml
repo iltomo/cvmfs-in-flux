@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: cvmfs-test-pod-01
+  namespace: cvmfs-03
+spec:
+  containers:
+  - name: test-pod
+    image: ubuntu:latest
+
+    command:
+      #- /bin/ls
+      #- /cvmfs/grid.cern.ch/etc/grid-security/
+      - /bin/sh
+      - -c
+      - while true; do sleep 1000; done
+
+    volumeMounts:
+      - mountPath: /cvmfs
+        mountPropagation: HostToContainer
+        name: public-cvmfs
+
+  volumes:
+    - name: public-cvmfs
+      persistentVolumeClaim:
+        claimName: cvmfs-03
