@@ -4,4 +4,3 @@ namespace: cvmfs-03
 resources:
   - namespace.yaml
   - release.yaml
-  - cvmfs-csi-pvc.yaml
