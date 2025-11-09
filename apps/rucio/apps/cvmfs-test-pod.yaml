@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: cvmfs-test-pod-01
+  name: cvmfs-test-pod-02
   namespace: cvmfs-03
 spec:
   containers:
