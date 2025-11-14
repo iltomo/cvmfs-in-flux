@@ -36,7 +36,7 @@ spec:
           serviceAccountName: cacj-edit
           containers:
             - name: cacj
-              image: harbor.cloud.infn.it/testbed-dm/ca-bundle-cron:v0.7.7
+              image: harbor.cloud.infn.it/testbed-dm/ca-bundle-cron:v0.7.8
               volumeMounts:
               - mountPath: /cvmfs
                 mountPropagation: HostToContainer
