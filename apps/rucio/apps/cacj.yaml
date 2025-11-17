@@ -36,12 +36,12 @@ spec:
           serviceAccountName: cacj-edit
           containers:
             - name: cacj
-              image: harbor.cloud.infn.it/testbed-dm/ca-bundle-cron:v1.1.1
+              image: harbor.cloud.infn.it/testbed-dm/ca-bundle-cron:v1.1.2
 
-              command:
-                - /bin/sh
-                - -c
-                - while true; do sleep 1000; done
+              #command:
+                #- /bin/sh
+                #- -c
+                #- while true; do sleep 1000; done
 
               volumeMounts:
               - mountPath: /cvmfs

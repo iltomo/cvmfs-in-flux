@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: cvmfs-test-cj-01
+  namespace: cvmfs-03
+spec:
+  serviceAccountName: cacj-edit
+  containers:
+  - name: test-pod
+    image: harbor.cloud.infn.it/testbed-dm/ca-bundle-cron:v1.1.6
+
+    #command:
+      #- /bin/sh
+      #- -c
+      #- while true; do sleep 1000; done
+
+    volumeMounts:
+      - mountPath: /cvmfs
+        mountPropagation: HostToContainer
+        name: public-cvmfs
+
+  volumes:
+    - name: public-cvmfs
+      persistentVolumeClaim:
+        claimName: cvmfs-flux-pvc

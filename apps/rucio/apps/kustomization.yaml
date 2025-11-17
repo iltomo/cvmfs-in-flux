@@ -2,4 +2,13 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
   - cvmfs-test-pod.yaml
-  - cacj.yaml
+  - cacj.yamlogeneratorOptions:
+
+generatorOptions:
+  disableNameSuffixHash: true
+
+secretGenerator:
+- name: dir-secret
+  namespace: cvmfs-03
+  files:
+  - /home/almalinux/PROJECTS/cvmfs-in-flux/apps/rucio/apps
