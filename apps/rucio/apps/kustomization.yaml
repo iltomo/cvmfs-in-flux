@@ -11,4 +11,4 @@ secretGenerator:
 - name: dir-secret
   namespace: cvmfs-03
   files:
-  - /home/almalinux/PROJECTS/cvmfs-in-flux/apps/rucio/apps
+  - Customizations/
